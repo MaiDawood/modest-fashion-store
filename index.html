@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأمل للزي الشرعي - متجر الملابس النسائية المحتشمة</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="navbar-menu">
+                <li class="navbar-item active">
+                    <a href="index.html" class="navbar-link">الصفحة الرئيسية</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="shop.html" class="navbar-link">متجرنا</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="about.html" class="navbar-link">من نحن</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="contact.html" class="navbar-link">تواصل معنا</a>
+                </li>
+            </ul>
+            <div class="cart-icon-wrapper">
+                <div class="cart-icon">🛍️</div>
+                <div class="cart-count" style="display: none;">0</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>الأمل للزي الشرعي</h1>
+            <p>متجرك الأول للملابس النسائية المحتشمة ذات الجودة العالية</p>
+            <a href="shop.html" class="btn btn-outline" style="color: white; border-color: white; margin-top: 1.5rem;">
+                تصفح المتجر الآن
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>فئات المنتجات</h2>
+                <p>اختر من بين مجموعتنا الواسعة من الملابس المحتشمة</p>
+            </div>
+            <div class="grid grid-4">
+                <div class="card" style="text-align: center; cursor: pointer; transition: all 0.3s;" onclick="window.location.href='shop.html?category=hijabs'">
+                    <div style="aspect-ratio: 1; background: linear-gradient(135deg, #59425A 0%, #9E7C97 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                        👳
+                    </div>
+                    <div class="card-body">
+                        <h3>الحجابات</h3>
+                        <p style="color: var(--text-light);">حجابات متنوعة من أجود الخامات</p>
+                    </div>
+                </div>
+                <div class="card" style="text-align: center; cursor: pointer; transition: all 0.3s;" onclick="window.location.href='shop.html?category=abayas'">
+                    <div style="aspect-ratio: 1; background: linear-gradient(135deg, #9E7C97 0%, #C1A9BD 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                        👗
+                    </div>
+                    <div class="card-body">
+                        <h3>العباءات</h3>
+                        <p style="color: var(--text-light);">عباءات فاخرة وأنيقة</p>
+                    </div>
+                </div>
+                <div class="card" style="text-align: center; cursor: pointer; transition: all 0.3s;" onclick="window.location.href='shop.html?category=niqabs'">
+                    <div style="aspect-ratio: 1; background: linear-gradient(135deg, #C1A9BD 0%, #9E7C97 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                        🧕
+                    </div>
+                    <div class="card-body">
+                        <h3>النقاب</h3>
+                        <p style="color: var(--text-light);">نقاب أنيق وسهل الاستخدام</p>
+                    </div>
+                </div>
+                <div class="card" style="text-align: center; cursor: pointer; transition: all 0.3s;" onclick="window.location.href='shop.html?category=accessories'">
+                    <div style="aspect-ratio: 1; background: linear-gradient(135deg, #59425A 0%, #C1A9BD 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                        ✨
+                    </div>
+                    <div class="card-body">
+                        <h3>الإكسسوارات</h3>
+                        <p style="color: var(--text-light);">إكسسوارات تتمم إطلالتك</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="section" style="background-color: var(--light-accent);">
+        <div class="container">
+            <div class="section-title">
+                <h2>المنتجات المميزة</h2>
+                <p>اختاري من أفضل تشكيلاتنا</p>
+            </div>
+            <div class="grid grid-4" data-products-container>
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>لماذا اختارينا؟</h2>
+            </div>
+            <div class="grid grid-3">
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+                    <h3>جودة عالية</h3>
+                    <p>نختار أفضل الخامات من حول العالم</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">💚</div>
+                    <h3>تصاميم محتشمة</h3>
+                    <p>جميع منتجاتنا تحافظ على الحشمة والأناقة</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🚚</div>
+                    <h3>شحن سريع</h3>
+                    <p>توصيل سريع وآمن إلى باب منزلك</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">💰</div>
+                    <h3>أسعار عادلة</h3>
+                    <p>نقدم أفضل سعر مقابل الجودة</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📞</div>
+                    <h3>خدمة عملاء</h3>
+                    <p>فريقنا متاح دائماً لمساعدتك</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔄</div>
+                    <h3>سياسة الاسترجاع</h3>
+                    <p>استرجاع سهل وبدون تعقيدات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" style="background-color: var(--light-accent);">
+        <div class="container">
+            <div class="section-title">
+                <h2>آراء العملاء</h2>
+                <p>ماذا يقول عملاؤنا عننا</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card testimonial-card">
+                    <div style="font-size: 1.5rem; margin-bottom: 1rem; color: #FFB800;">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">منتجات عالية الجودة وخدمة ممتازة! أنا راضية جداً عن شرائي</p>
+                    <p class="testimonial-author">فاطمة محمد</p>
+                </div>
+                <div class="card testimonial-card">
+                    <div style="font-size: 1.5rem; margin-bottom: 1rem; color: #FFB800;">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">الحجاب رائع جداً والشحن كان سريع جداً شكراً لكم</p>
+                    <p class="testimonial-author">عائشة علي</p>
+                </div>
+                <div class="card testimonial-card">
+                    <div style="font-size: 1.5rem; margin-bottom: 1rem; color: #FFB800;">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">تصاميم جميلة وملتزمة بالحشمة. موقع رائع وسهل الاستخدام</p>
+                    <p class="testimonial-author">سارة أحمد</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section">
+        <div class="container">
+            <div class="newsletter-section">
+                <h2>اشتركي في نشرتنا البريدية</h2>
+                <p>احصلي على أحدث المنتجات والعروض الحصرية</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="أدخلي بريدك الإلكتروني" required>
+                    <button type="submit" class="btn btn-primary">اشتركي</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>الأمل للزي الشرعي</h3>
+                    <p style="margin-bottom: 1rem;">متجر متخصص في الملابس النسائية المحتشمة ذات الجودة العالية.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">𝕏</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">▶</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الصفحة الرئيسية</a></li>
+                        <li><a href="shop.html">المتجر</a></li>
+                        <li><a href="about.html">عن المتجر</a></li>
+                        <li><a href="faq.html">أسئلة شائعة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>سياسات</h3>
+                    <ul>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#">سياسة الاسترجاع</a></li>
+                        <li><a href="#">سياسة الشحن</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>تواصلي معنا</h3>
+                    <ul>
+                        <li>📧 info@almalzey.com</li>
+                        <li>📞 +966 123 456 789</li>
+                        <li>📍 الرياض، المملكة العربية السعودية</li>
+                        <li>⏰ السبت - الخميس: 9 ص - 10 م</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 الأمل للزي الشرعي. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/product-data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

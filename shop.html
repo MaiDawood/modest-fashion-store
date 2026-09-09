@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجرنا - الأمل للزي الشرعي</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="index.html" class="navbar-link">الصفحة الرئيسية</a>
+                </li>
+                <li class="navbar-item active">
+                    <a href="shop.html" class="navbar-link">متجرنا</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="about.html" class="navbar-link">من نحن</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="contact.html" class="navbar-link">تواصل معنا</a>
+                </li>
+            </ul>
+            <div class="cart-icon-wrapper">
+                <div class="cart-icon">🛍️</div>
+                <div class="cart-count" style="display: none;">0</div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb mt-2xl mb-2xl">
+            <span class="active">المتجر</span>
+            <span class="breadcrumb-sep">/</span>
+            <a href="index.html">الرئيسية</a>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 250px 1fr; gap: 2rem; margin-bottom: 3rem;">
+            <!-- Sidebar Filters -->
+            <aside style="background-color: var(--light-accent); padding: 1.5rem; border-radius: 8px; height: fit-content;">
+                <h3 style="margin-bottom: 1.5rem;">الفلاتر</h3>
+
+                <!-- Category Filter -->
+                <div style="margin-bottom: 2rem;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">الفئة</label>
+                    <select data-filter="category" style="width: 100%; padding: 0.5rem;">
+                        <option value="all">الكل</option>
+                        <option value="hijabs">الحجابات</option>
+                        <option value="abayas">العباءات</option>
+                        <option value="niqabs">النقاب</option>
+                        <option value="accessories">الإكسسوارات</option>
+                    </select>
+                </div>
+
+                <!-- Price Range Filter -->
+                <div style="margin-bottom: 2rem;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">نطاق السعر</label>
+                    <div style="margin-bottom: 0.5rem;">
+                        <input type="range" data-filter="price-range" min="0" max="500" value="500" style="width: 100%;">
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                        <span>$0</span>
+                        <span data-price-display>$500</span>
+                    </div>
+                </div>
+
+                <!-- Search -->
+                <div style="margin-bottom: 2rem;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">بحث</label>
+                    <input type="text" data-filter="search" placeholder="ابحثي عن منتج..." style="width: 100%; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 4px;">
+                </div>
+
+                <!-- Color Filter -->
+                <div style="margin-bottom: 2rem;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">اللون</label>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <button data-filter-color="أسود" style="width: 30px; height: 30px; background-color: #000; border-radius: 50%; border: 2px solid #ddd; cursor: pointer;"></button>
+                        <button data-filter-color="بني" style="width: 30px; height: 30px; background-color: #8B4513; border-radius: 50%; border: 2px solid #ddd; cursor: pointer;"></button>
+                        <button data-filter-color="رمادي" style="width: 30px; height: 30px; background-color: #808080; border-radius: 50%; border: 2px solid #ddd; cursor: pointer;"></button>
+                        <button data-filter-color="بيج" style="width: 30px; height: 30px; background-color: #D3C3A8; border-radius: 50%; border: 2px solid #ddd; cursor: pointer;"></button>
+                    </div>
+                </div>
+
+                <!-- Clear Filters -->
+                <button onclick="location.reload()" class="btn btn-outline" style="width: 100;">
+                    مسح الفلاتر
+                </button>
+            </aside>
+
+            <!-- Products Section -->
+            <div>
+                <!-- Sort -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2>جميع المنتجات</h2>
+                    <select data-sort style="padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 4px;">
+                        <option value="newest">الأحدث</option>
+                        <option value="price-low">السعر: الأقل أولاً</option>
+                        <option value="price-high">السعر: الأعلى أولاً</option>
+                        <option value="popular">الأكثر شهرة</option>
+                        <option value="rating">التقييم</option>
+                    </select>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="grid grid-3" data-products-container>
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>الأمل للزي الشرعي</h3>
+                    <p style="margin-bottom: 1rem;">متجر متخصص في الملابس النسائية المحتشمة ذات الجودة العالية.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">𝕏</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">▶</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الصفحة الرئيسية</a></li>
+                        <li><a href="shop.html">المتجر</a></li>
+                        <li><a href="about.html">عن المتجر</a></li>
+                        <li><a href="faq.html">أسئلة شائعة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>سياسات</h3>
+                    <ul>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#">سياسة الاسترجاع</a></li>
+                        <li><a href="#">سياسة الشحن</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>تواصلي معنا</h3>
+                    <ul>
+                        <li>📧 info@almalzey.com</li>
+                        <li>📞 +966 123 456 789</li>
+                        <li>📍 الرياض، المملكة العربية السعودية</li>
+                        <li>⏰ السبت - الخميس: 9 ص - 10 م</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 الأمل للزي الشرعي. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/product-data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

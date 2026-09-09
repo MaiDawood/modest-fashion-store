@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سلة التسوق - الأمل للزي الشرعي</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="index.html" class="navbar-link">الصفحة الرئيسية</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="shop.html" class="navbar-link">متجرنا</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="about.html" class="navbar-link">من نحن</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="contact.html" class="navbar-link">تواصل معنا</a>
+                </li>
+            </ul>
+            <div class="cart-icon-wrapper">
+                <div class="cart-icon">🛍️</div>
+                <div class="cart-count" style="display: none;">0</div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb mt-2xl mb-2xl">
+            <span class="active">سلة التسوق</span>
+            <span class="breadcrumb-sep">/</span>
+            <a href="index.html">الرئيسية</a>
+        </div>
+
+        <h1 style="margin-bottom: 2rem;">سلة التسوق</h1>
+
+        <div style="display: grid; grid-template-columns: 1fr 350px; gap: 2rem;">
+            <!-- Cart Items -->
+            <div data-cart-items>
+                <!-- Will be populated by JavaScript -->
+            </div>
+
+            <!-- Cart Summary -->
+            <div data-cart-summary>
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="margin-top: 3rem;">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>الأمل للزي الشرعي</h3>
+                    <p style="margin-bottom: 1rem;">متجر متخصص في الملابس النسائية المحتشمة ذات الجودة العالية.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">𝕏</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">▶</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الصفحة الرئيسية</a></li>
+                        <li><a href="shop.html">المتجر</a></li>
+                        <li><a href="about.html">عن المتجر</a></li>
+                        <li><a href="faq.html">أسئلة شائعة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>سياسات</h3>
+                    <ul>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#">سياسة الاسترجاع</a></li>
+                        <li><a href="#">سياسة الشحن</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>تواصلي معنا</h3>
+                    <ul>
+                        <li>📧 info@almalzey.com</li>
+                        <li>📞 +966 123 456 789</li>
+                        <li>📍 الرياض، المملكة العربية السعودية</li>
+                        <li>⏰ السبت - الخميس: 9 ص - 10 م</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 الأمل للزي الشرعي. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/product-data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
