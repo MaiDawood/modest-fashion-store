@@ -1,172 +1,113 @@
-// Shopping Cart Management
+/* ============================================
+   SHOPPING CART - LocalStorage Management
+   ============================================ */
 
-class ShoppingCart {
-  constructor() {
-    this.items = this.loadFromStorage();
-  }
+const STORAGE_KEY = 'modest_fashion_cart';
 
-  loadFromStorage() {
-    const stored = localStorage.getItem('cart');
-    return stored ? JSON.parse(stored) : [];
-  }
+const cart = {
+    // Initialize cart from localStorage
+    init() {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        return stored ? JSON.parse(stored) : [];
+    },
 
-  saveToStorage() {
-    localStorage.setItem('cart', JSON.stringify(this.items));
-  }
+    // Get all cart items
+    getItems() {
+        return this.init();
+    },
 
-  addItem(product, quantity = 1, options = {}) {
-    const existingItem = this.items.find(item => 
-      item.id === product.id && 
-      JSON.stringify(item.options) === JSON.stringify(options)
-    );
+    // Add or update item in cart
+    addItem(product, quantity = 1) {
+        const items = this.init();
+        const existingItem = items.find(item => item.id === product.id);
 
-    if (existingItem) {
-      existingItem.quantity += quantity;
-    } else {
-      this.items.push({
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        image: product.image,
-        quantity,
-        options
-      });
+        if (existingItem) {
+            existingItem.quantity += quantity;
+        } else {
+            items.push({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                category: product.category,
+                image: product.image,
+                quantity: quantity
+            });
+        }
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+        return items;
+    },
+
+    // Update quantity
+    updateQuantity(productId, quantity) {
+        const items = this.init();
+        const item = items.find(item => item.id === productId);
+
+        if (item) {
+            if (quantity <= 0) {
+                return this.removeItem(productId);
+            }
+            item.quantity = quantity;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+        }
+
+        return items;
+    },
+
+    // Remove item from cart
+    removeItem(productId) {
+        let items = this.init();
+        items = items.filter(item => item.id !== productId);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+        return items;
+    },
+
+    // Clear entire cart
+    clear() {
+        localStorage.removeItem(STORAGE_KEY);
+        return [];
+    },
+
+    // Get total number of items
+    getItemCount() {
+        const items = this.init();
+        return items.reduce((sum, item) => sum + item.quantity, 0);
+    },
+
+    // Get cart total price
+    getTotal() {
+        const items = this.init();
+        return items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    },
+
+    // Check if product is in cart
+    hasItem(productId) {
+        const items = this.init();
+        return items.some(item => item.id === productId);
+    },
+
+    // Get quantity of specific product
+    getItemQuantity(productId) {
+        const items = this.init();
+        const item = items.find(item => item.id === productId);
+        return item ? item.quantity : 0;
     }
+};
 
-    this.saveToStorage();
-    this.notifyListeners();
-  }
+// Update cart counter in navbar
+function updateCartCounter() {
+    const cartCount = document.querySelector('.cart-count');
+    const itemCount = cart.getItemCount();
 
-  removeItem(id, options = {}) {
-    this.items = this.items.filter(item => 
-      !(item.id === id && JSON.stringify(item.options) === JSON.stringify(options))
-    );
-    this.saveToStorage();
-    this.notifyListeners();
-  }
-
-  updateQuantity(id, quantity, options = {}) {
-    const item = this.items.find(item => 
-      item.id === id && 
-      JSON.stringify(item.options) === JSON.stringify(options)
-    );
-    
-    if (item) {
-      if (quantity <= 0) {
-        this.removeItem(id, options);
-      } else {
-        item.quantity = quantity;
-        this.saveToStorage();
-        this.notifyListeners();
-      }
+    if (cartCount) {
+        if (itemCount > 0) {
+            cartCount.textContent = itemCount;
+            cartCount.style.display = 'flex';
+        } else {
+            cartCount.style.display = 'none';
+        }
     }
-  }
-
-  clear() {
-    this.items = [];
-    this.saveToStorage();
-    this.notifyListeners();
-  }
-
-  getTotal() {
-    return this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
-  }
-
-  getItemCount() {
-    return this.items.reduce((count, item) => count + item.quantity, 0);
-  }
-
-  getItems() {
-    return this.items;
-  }
-
-  listeners = [];
-
-  subscribe(callback) {
-    this.listeners.push(callback);
-    return () => {
-      this.listeners = this.listeners.filter(l => l !== callback);
-    };
-  }
-
-  notifyListeners() {
-    this.listeners.forEach(callback => callback(this.items));
-  }
 }
 
-// Create global cart instance
-const cart = new ShoppingCart();
-
-// Wishlist Management
-class Wishlist {
-  constructor() {
-    this.items = this.loadFromStorage();
-  }
-
-  loadFromStorage() {
-    const stored = localStorage.getItem('wishlist');
-    return stored ? JSON.parse(stored) : [];
-  }
-
-  saveToStorage() {
-    localStorage.setItem('wishlist', JSON.stringify(this.items));
-  }
-
-  addItem(product) {
-    if (!this.items.find(item => item.id === product.id)) {
-      this.items.push({
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        image: product.image,
-        addedAt: new Date()
-      });
-      this.saveToStorage();
-      this.notifyListeners();
-    }
-  }
-
-  removeItem(id) {
-    this.items = this.items.filter(item => item.id !== id);
-    this.saveToStorage();
-    this.notifyListeners();
-  }
-
-  toggle(product) {
-    if (this.has(product.id)) {
-      this.removeItem(product.id);
-    } else {
-      this.addItem(product);
-    }
-  }
-
-  has(id) {
-    return this.items.some(item => item.id === id);
-  }
-
-  getItems() {
-    return this.items;
-  }
-
-  clear() {
-    this.items = [];
-    this.saveToStorage();
-    this.notifyListeners();
-  }
-
-  listeners = [];
-
-  subscribe(callback) {
-    this.listeners.push(callback);
-    return () => {
-      this.listeners = this.listeners.filter(l => l !== callback);
-    };
-  }
-
-  notifyListeners() {
-    this.listeners.forEach(callback => callback(this.items));
-  }
-}
-
-// Create global wishlist instance
-const wishlist = new Wishlist();
+// Update cart counter on page load and when cart changes
+document.addEventListener('DOMContentLoaded', updateCartCounter);
