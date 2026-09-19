@@ -9,7 +9,7 @@ const productsData = [
         name: 'عباية سوداء فاخرة',
         price: 149.99,
         category: 'عبايات',
-        image: '👗',
+        image: 'images/abaya1.jpg',
         rating: 4.8,
         reviews: 125
     },
@@ -18,7 +18,7 @@ const productsData = [
         name: 'عباية بيج كلاسيكية',
         price: 129.99,
         category: 'عبايات',
-        image: '👗',
+        image: 'images/abaya2.jpg',
         rating: 4.6,
         reviews: 98
     },
@@ -27,7 +27,7 @@ const productsData = [
         name: 'عباية رمادية حديثة',
         price: 139.99,
         category: 'عبايات',
-        image: '👗',
+        image: 'images/abaya3.jpg',
         rating: 4.7,
         reviews: 112
     },
@@ -36,7 +36,7 @@ const productsData = [
         name: 'عباية بنية فاخرة',
         price: 159.99,
         category: 'عبايات',
-        image: '👗',
+        image: 'images/abaya4.jpg',
         rating: 4.9,
         reviews: 156
     },
@@ -47,7 +47,7 @@ const productsData = [
         name: 'طقم حجاب وعباية أسود',
         price: 189.99,
         category: 'اطقم',
-        image: '👚',
+        image: 'images/set1.jpg',
         rating: 4.7,
         reviews: 145
     },
@@ -56,7 +56,7 @@ const productsData = [
         name: 'طقم حجاب وعباية بيج',
         price: 179.99,
         category: 'اطقم',
-        image: '👚',
+        image: 'images/set2.jpg',
         rating: 4.8,
         reviews: 167
     },
@@ -65,7 +65,7 @@ const productsData = [
         name: 'طقم فستان وحجاب رمادي',
         price: 169.99,
         category: 'اطقم',
-        image: '👚',
+        image: 'images/set3.jpg',
         rating: 4.6,
         reviews: 134
     },
@@ -74,7 +74,7 @@ const productsData = [
         name: 'طقم ثلاثي بني وسكري',
         price: 199.99,
         category: 'اطقم',
-        image: '👚',
+        image: 'images/set4.jpg',
         rating: 4.9,
         reviews: 189
     },
@@ -85,7 +85,7 @@ const productsData = [
         name: 'إسدال أسود حرير',
         price: 49.99,
         category: 'اسدالات',
-        image: '🧣',
+        image: 'images/isdal1.jpg',
         rating: 4.5,
         reviews: 78
     },
@@ -94,7 +94,7 @@ const productsData = [
         name: 'إسدال بيج ناعم',
         price: 45.99,
         category: 'اسدالات',
-        image: '🧣',
+        image: 'images/isdal2.jpg',
         rating: 4.4,
         reviews: 65
     },
@@ -103,7 +103,7 @@ const productsData = [
         name: 'إسدال رمادي فاخر',
         price: 54.99,
         category: 'اسدالات',
-        image: '🧣',
+        image: 'images/isdal3.jpg',
         rating: 4.7,
         reviews: 92
     },
@@ -112,7 +112,7 @@ const productsData = [
         name: 'إسدال بني مزخرف',
         price: 59.99,
         category: 'اسدالات',
-        image: '🧣',
+        image: 'images/isdal4.jpg',
         rating: 4.6,
         reviews: 105
     },
@@ -123,7 +123,7 @@ const productsData = [
         name: 'شالة سوداء فخمة',
         price: 69.99,
         category: 'شالات',
-        image: '🧠',
+        image: 'images/shawl1.jpg',
         rating: 4.8,
         reviews: 142
     },
@@ -132,7 +132,7 @@ const productsData = [
         name: 'شالة بيج ناعمة',
         price: 64.99,
         category: 'شالات',
-        image: '🧠',
+        image: 'images/shawl2.jpg',
         rating: 4.5,
         reviews: 88
     },
@@ -141,7 +141,7 @@ const productsData = [
         name: 'شالة رمادية مزخرفة',
         price: 74.99,
         category: 'شالات',
-        image: '🧠',
+        image: 'images/shawl3.jpg',
         rating: 4.7,
         reviews: 118
     },
@@ -150,7 +150,7 @@ const productsData = [
         name: 'شالة بنية مخملية',
         price: 79.99,
         category: 'شالات',
-        image: '🧠',
+        image: 'images/shawl4.jpg',
         rating: 4.9,
         reviews: 167
     },
@@ -161,7 +161,7 @@ const productsData = [
         name: 'دبابيس حجاب ذهبية',
         price: 9.99,
         category: 'مكملات حجاب',
-        image: '✨',
+        image: 'images/accessory1.jpg',
         rating: 4.4,
         reviews: 234
     },
@@ -170,7 +170,7 @@ const productsData = [
         name: 'حزام حجاب أسود',
         price: 19.99,
         category: 'مكملات حجاب',
-        image: '✨',
+        image: 'images/accessory2.jpg',
         rating: 4.6,
         reviews: 156
     },
@@ -179,7 +179,7 @@ const productsData = [
         name: 'مشابك حجاب فضية',
         price: 14.99,
         category: 'مكملات حجاب',
-        image: '✨',
+        image: 'images/accessory3.jpg',
         rating: 4.7,
         reviews: 201
     },
@@ -188,7 +188,7 @@ const productsData = [
         name: 'ربطة حجاب مزخرفة',
         price: 24.99,
         category: 'مكملات حجاب',
-        image: '✨',
+        image: 'images/accessory4.jpg',
         rating: 4.8,
         reviews: 189
     }

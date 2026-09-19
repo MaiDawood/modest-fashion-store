@@ -19,17 +19,18 @@ function renderProducts(products, containerId = '[data-products-container]') {
     container.innerHTML = products.map(product => `
         <div class="card fade-in" style="cursor: pointer; transition: all 0.3s ease;">
             <div style="
-                font-size: 4rem;
                 text-align: center;
                 margin-bottom: 1rem;
-                min-height: 100px;
+                min-height: 180px;
+                height: 180px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 background-color: var(--light-accent);
                 border-radius: 8px;
+                overflow: hidden;
             ">
-                ${product.image}
+                <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
             </div>
             <div class="card-body">
                 <h3 style="margin-bottom: 0.5rem; color: var(--text-dark);">${product.name}</h3>
@@ -112,9 +113,7 @@ function renderProductDetail() {
                 justify-content: center;
                 min-height: 400px;
             ">
-                <div style="font-size: 8rem;">
-                    ${product.image}
-                </div>
+                <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; display: block;">
             </div>
 
             <!-- Product Info -->
@@ -273,14 +272,14 @@ function renderRelatedProducts(productId) {
     container.innerHTML = relatedProducts.map(product => `
         <div class="card fade-in" style="cursor: pointer;">
             <div style="
-                font-size: 3rem;
                 text-align: center;
                 margin-bottom: 1rem;
                 background-color: var(--light-accent);
-                padding: 1.5rem;
+                height: 180px;
+                overflow: hidden;
                 border-radius: 8px;
             ">
-                ${product.image}
+                <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
             </div>
             <div class="card-body">
                 <h4 style="margin-bottom: 0.5rem;">${product.name}</h4>
@@ -332,13 +331,14 @@ function renderCartItems() {
                 " class="fade-in">
                     <!-- Product Image -->
                     <div style="
-                        font-size: 3rem;
                         text-align: center;
                         background-color: var(--light-accent);
-                        padding: 1rem;
+                        width: 100px;
+                        height: 100px;
+                        overflow: hidden;
                         border-radius: 8px;
                     ">
-                        ${item.image}
+                        <img src="${item.image}" alt="${item.name}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
 
                     <!-- Product Info -->
